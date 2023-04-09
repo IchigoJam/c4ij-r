@@ -1,27 +1,36 @@
 # c4ij-r
 
-C language for IchigoJam R
+- C language environment for IchigoJam R
+- C言語開発環境 for IchigoJam R
 
 ## Setup (Mac)
 
-[Homebrew](https://brew.sh/)
+[Homebrew](https://brew.sh/) - 開発ツールインストール用ツール
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-[Deno](https://deno.land/)
+[Deno](https://deno.land/) - JavaScript開発ツール
 ```sh
 curl -fsSL https://deno.land/x/install/install.sh | sh
 ```
 
+[riscv-gnu-toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain) - RISC-V用Cコンパイラ
 ```sh
 brew install riscv-gnu-toolchain
 ```
 
 ## Build
 
+1. edit [main.c](main.c)
+2. build!
 ```sh
 make
+```
+3. type the dump in IchigoJam
+4. RUN on IchigoJam
+```
+?USR(#700,100)
 ```
 
 ## Sample
