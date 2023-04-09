@@ -1,0 +1,5 @@
+*.bin
+*.dmp
+*.map
+*.elf
+obj/
