@@ -9,13 +9,24 @@ C language environment for IchigoJam R (C言語開発環境 for IchigoJam R)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+
+```
+==> Next steps:
+- Run these two commands in your terminal to add Homebrew to your PATH:
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/fukuno/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
+```
+最後に表示される NextSteps の2行をコピーしてそのままターミナルに貼り付けて、エンター
+
 [Deno](https://deno.land/) - JavaScript開発ツール
 ```sh
-curl -fsSL https://deno.land/x/install/install.sh | sh
+brow install deno
 ```
 
 [riscv-gnu-toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain) - RISC-V用Cコンパイラ
 ```sh
+brew tap riscv-software-src/riscv
 brew install riscv-gnu-toolchain
 ```
 
