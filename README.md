@@ -13,9 +13,8 @@ C language environment for IchigoJam R (C言語開発環境 for IchigoJam R)
 ```
 ==> Next steps:
 - Run these two commands in your terminal to add Homebrew to your PATH:
-    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/fukuno/.zprofile
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
-
 ```
 最後に表示される NextSteps の2行をコピーしてそのままターミナルに貼り付けて、エンター
 
