@@ -20,7 +20,7 @@ C language environment for IchigoJam R (C言語開発環境 for IchigoJam R)
 
 [Deno](https://deno.land/) - JavaScript開発ツール
 ```sh
-brow install deno
+brew install deno
 ```
 
 [riscv-gnu-toolchain](https://github.com/riscv-collab/riscv-gnu-toolchain) - RISC-V用Cコンパイラ
