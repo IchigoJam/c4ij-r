@@ -2,6 +2,17 @@
 
 C language environment for IchigoJam R (C言語開発環境 for IchigoJam R)
 
+```c
+__attribute__ ((section(".main")))
+int main(int param) {
+  return param + 1;
+}
+```
+→
+```
+100 POKE#700,#05,#05,#82,#80
+```
+
 ## Setup (Mac)
 
 [Homebrew](https://brew.sh/) - 開発ツールインストール用ツール
