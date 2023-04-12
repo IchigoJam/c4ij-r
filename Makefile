@@ -27,7 +27,7 @@ TARGET = $(TARGET_NAME).elf
 CSRCS=$(SRCMAIN)
 #CXXSRCS = $(wildcard src/*.cpp)
 ASMSRCS = $(wildcard $(SRCPATH)/*.s)
-OBJS = $(addprefix obj/,$(notdir $(CXXSRCS:.cpp=.o) $(CSRCS:.c=.o) $(ASMSRCS:.s=.o)))
+OBJS = $(addprefix ,$(notdir $(CXXSRCS:.cpp=.o) $(CSRCS:.c=.o) $(ASMSRCS:.s=.o)))
 
 all: $(TARGET)
 	$(ARCH)-size $(TARGET)
@@ -41,13 +41,13 @@ $(TARGET): $(OBJS)
 #obj/%.o: ../src/%.cpp
 #	$(CXX) $(CXXFLAGS) $(addprefix -I,$(INCLUDES)) -c -o $@ $^
 
-obj/%.o: $(SRCPATH)/%.c
+%.o: $(SRCPATH)/%.c
 	$(CC) $(CFLAGS) $(addprefix -I,$(INCLUDES)) -c -o $@ $^
-obj/main.o: $(SRCMAIN)
+main.o: $(SRCMAIN)
 	$(CC) $(CFLAGS) $(addprefix -I,$(INCLUDES)) -c -o $@ $^
 
-obj/%.o: $(SRCPATH)/%.s
+%.o: $(SRCPATH)/%.s
 	$(CC) -x assembler-with-cpp $(addprefix -I,$(INCLUDES)) $(CFLAGS) -c -o $@ $^
 
 clean:
-	$(RM) $(TARGET) $(TARGET:.elf=.bin) obj/*.o
+	$(RM) $(TARGET) $(TARGET:.elf=.bin) *.o *.dmp *.map

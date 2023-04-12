@@ -2,4 +2,4 @@
 *.dmp
 *.map
 *.elf
-obj/
+*.o
