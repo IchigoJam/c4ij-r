@@ -28,6 +28,7 @@ brew install deno
 brew tap riscv-software-src/riscv
 brew install riscv-gnu-toolchain
 ```
+割と長く待つ
 
 ## Build
 
