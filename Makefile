@@ -29,9 +29,13 @@ CSRCS=$(SRCMAIN)
 ASMSRCS = $(wildcard $(SRCPATH)/*.s)
 OBJS = $(addprefix ,$(notdir $(CXXSRCS:.cpp=.o) $(CSRCS:.c=.o) $(ASMSRCS:.s=.o)))
 
-all: $(TARGET)
+all: $(TARGET) dump15
 	$(ARCH)-size $(TARGET)
-	deno run --allow-read https://code4fukui.github.io/dump/dump15.js $(TARGET_NAME).bin
+	#deno run --allow-read https://code4fukui.github.io/dump/dump15.js $(TARGET_NAME).bin
+	./dump15 $(TARGET_NAME).bin
+
+dump15: dump15
+	gcc dump15.c -o dump15
 
 $(TARGET): $(OBJS)
 	$(LD) $(LDFLAGS) -o $@ $^
@@ -50,4 +54,4 @@ main.o: $(SRCMAIN)
 	$(CC) -x assembler-with-cpp $(addprefix -I,$(INCLUDES)) $(CFLAGS) -c -o $@ $^
 
 clean:
-	$(RM) $(TARGET) $(TARGET:.elf=.bin) *.o *.dmp *.map
+	$(RM) $(TARGET) $(TARGET:.elf=.bin) *.o *.dmp *.map dump15
